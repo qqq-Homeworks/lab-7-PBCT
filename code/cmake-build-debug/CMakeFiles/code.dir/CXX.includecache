@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/qqq/Documents/University/1course/2term/PBCT/7 lab/code/main.cpp
+iostream
+-
+task_1.hpp
+/Users/qqq/Documents/University/1course/2term/PBCT/7 lab/code/task_1.hpp
+task_2.hpp
+/Users/qqq/Documents/University/1course/2term/PBCT/7 lab/code/task_2.hpp
+list
+-
+
+/Users/qqq/Documents/University/1course/2term/PBCT/7 lab/code/task_1.hpp
+
+/Users/qqq/Documents/University/1course/2term/PBCT/7 lab/code/task_2.hpp
+iostream
+/Users/qqq/Documents/University/1course/2term/PBCT/7 lab/code/iostream
+
