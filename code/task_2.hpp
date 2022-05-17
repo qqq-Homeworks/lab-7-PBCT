@@ -5,57 +5,60 @@
 
 #include "iostream"
 
-class Abstr {
+class Y {
     double number;
 public:
-    explicit Abstr(double x = 0) : number(x) {}
+    explicit Y(double x = 0) : number(x) {}
 
+    virtual ~Y() {
+        std::cout << std::endl << "Y object was destructed" << std::endl;
+    }
+};
+
+class IPrint {
+public:
     virtual void print() = 0;
+};
 
-    virtual ~Abstr() {
-        std::cout << std::endl << "Abstr object was destructed" << std::endl;
+class U : public Y, public IPrint {
+    double number;
+public:
+    explicit U(double x = 0) : number(x) {}
+
+    void print() override {
+        std::cout << "U = [" << number << ']' << std::endl;
+    }
+
+    virtual ~U() {
+        std::cout << std::endl << "U object was destructed" << std::endl;
     }
 };
 
-class Deriv1 : public Abstr {
+class Z : public U {
     double number;
 public:
-    explicit Deriv1(double x = 0) : number(x) {}
+    explicit Z(double x = 0) : number(x) {}
 
     void print() override {
-        std::cout << "Deriv1 = [" << number << ']' << std::endl;
+        std::cout << "Z = [" << number << ']' << std::endl;
     }
 
-    virtual ~Deriv1() {
-        std::cout << std::endl << "Deriv1 object was destructed" << std::endl;
+    virtual ~Z() {
+        std::cout << std::endl << "Z object was destructed" << std::endl;
     }
 };
 
-class Deriv2 : public Deriv1 {
+class X : public U {
     double number;
 public:
-    explicit Deriv2(double x = 0) : number(x) {}
+    explicit X(double x = 0) : number(x) {}
 
     void print() override {
-        std::cout << "Deriv2 = [" << number << ']'<< std::endl;
+        std::cout << "X = [" << number << ']' << std::endl;
     }
 
-    virtual ~Deriv2() {
-        std::cout << std::endl << "Deriv2 object was destructed" << std::endl;
-    }
-};
-
-class Deriv3 : public Deriv1 {
-    double number;
-public:
-    explicit Deriv3(double x = 0) : number(x) {}
-
-    void print() override {
-        std::cout << "Deriv3 = [" << number << ']'<< std::endl;
-    }
-
-    virtual ~Deriv3() {
-        std::cout << std::endl << "Deriv3 object was destructed" << std::endl;
+    virtual ~X() {
+        std::cout << std::endl << "X object was destructed" << std::endl;
     }
 };
 

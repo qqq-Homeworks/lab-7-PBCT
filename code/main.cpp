@@ -3,6 +3,10 @@
 #include "task_2.hpp"
 #include <list>
 
+void printer(IPrint &pr) {
+    pr.print();
+}
+
 int main() {
 
     Bas *pObj;
@@ -33,11 +37,15 @@ int main() {
 
     std::cout << "--------------\n";
 
-    Deriv1 d1(404);
-    Deriv2 d2(808);
-    Deriv3 d3(606);
+    U d1(404);
+    Z d2(808);
+    X d3(606);
 
-    Abstr *pAbs = &d1;
+    printer(d1);
+    printer(d2);
+    printer(d3);
+
+    U *pAbs = &d1;
 
     pAbs->print();
     d1.print();
@@ -52,7 +60,7 @@ int main() {
 
     std::cout << "--------------\n";
 
-    std::list<Abstr *> arr{&d1, &d2, &d3};
+    std::list<U *> arr{&d1, &d2, &d3};
     while (!arr.empty()) {
         arr.front()->print();
         arr.pop_front();
